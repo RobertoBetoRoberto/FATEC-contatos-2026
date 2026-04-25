@@ -1,1 +1,5 @@
-import { getContatos } from "./contatos.js"
+'use strict'
+
+import { getContatos, deleteContato } from "./contato.js"
+
+getContatos
