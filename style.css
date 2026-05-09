@@ -1,5 +1,77 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+@charset "UFT-8";
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* classes para o formulário */
+.div-body form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 2px;
+    padding: 0 25px;
+    gap: 20px;
+}
+.div-body form fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 2px;
+    padding: 30px 40px 0 40px;
+}
+.div-body input, label{
+    font-size: 1.5em;
+}
+.div-body legend{
+    font-size: 1em;
+}
+/* classes para os erros */
+.erro-mensagem {
+    color: red;
+    font-size: 1em;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display: block;
+    min-height: 20px;
+}
+.input-invalido {
+    border-color: red;
+}
+/* classes para o botão */
+.area-botao{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.area-botao button{
+    font-size: 1.2em;
+    border-radius: 15px;
+}
+
+/* Classes para a tabela */
+.container{
+    font-size: 1.1em;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.caption{
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+.table{
+    border: solid #000000 1px;
+}
+.table tr, th, td{
+    border: solid #000000 1px;
+    padding: 5px 25px;
+    text-align: center;
+}
+.hint{
+    padding: 25px 50px;
+    font-size: 0.8em;
 }

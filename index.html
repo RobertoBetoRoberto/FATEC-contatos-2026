@@ -1,13 +1,56 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qualquer Coisa</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="./app.js" defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro Acessível</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./main.js" defer></script>
 </head>
 <body>
-    
+  <h1>Cadastro</h1>
+  <div class="div-body">
+    <form action="">
+      <legend>Salvar Contato</legend>
+
+      <fieldset>
+        <legend>Dados de Identificação</legend>
+
+        <label for="Nome Completo">Nome Completo</label>
+        <input type="text" name="" class="input" id="nome">
+        <span class="erro-mensagem" id="erro-nome"></span>
+
+        <label for="Idade">Idade</label>
+        <input type="text" name="" class="input" id="idade">
+        <span class="erro-mensagem" id="erro-idade"></span>
+        </fieldset>
+
+        <fieldset>
+        <legend>Dados de Contato</legend>
+        <label for="E-mail">E-mail</label>
+        <input type="email" name="" class="input" id="email">
+        <span class="erro-mensagem" id="erro-email"></span>
+
+        <label for="Número de Telefone">Número de Telefone</label>
+        <input type="tel" name="" inputmode="numeric" minlength="11" maxlength="11" class="input" id="telefone">
+        <span class="erro-mensagem" id="erro-telefone"></span>
+      </fieldset>
+      <fieldset>
+        <legend>Dados de Endereço</legend>
+
+        <label for="Rua">Rua</label>
+        <input type="text" name="" class="input" id="rua">
+        <span class="erro-mensagem" id="erro-rua"></span>
+        
+        <label for="Cidade">Cidade</label>
+        <input type="text" name="" class="input" id="cidade">
+        <span class="erro-mensagem" id="erro-cidade"></span>
+
+      </fieldset>
+      <div class="area-botao">
+        <button type="button" onclick="verificar()">Enviar Formulário</button>
+        <button type="button" onclick="limparInput()">Limpar Formulário</button>
+      </div>
+    </form>
+  </div>
 </body>
-</html>
