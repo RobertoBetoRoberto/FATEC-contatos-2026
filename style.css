@@ -223,7 +223,6 @@ h1{
     border-radius: 50%;
     object-fit: cover;
     position: absolute;
-
     pointer-events: none;
 }
 
