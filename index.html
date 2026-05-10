@@ -3,17 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cadastro Acessível</title>
+  <title>Cadastro Acessivel</title>
   <link rel="stylesheet" href="./style.css">
-  <script src="./js/verify.js" defer></script>
-  <script src="./app.js" defer></script>
-</head>
+  <script type="module" src="./app.js" defer></script></head>
 <body>
   <h1>Cadastro</h1>
   <div class="div-form">
     <form action="">
       <fieldset>
-        <legend>Dados de Identificação</legend>
+        <legend>Dados de Identificacao</legend>
 
         <label for="Nome Completo">Nome Completo</label>
         <input type="text" name="" class="input" id="nome">
@@ -22,38 +20,43 @@
         <label for="Idade">Idade</label>
         <input type="text" name="" class="input" id="idade">
         <span class="erro-mensagem" id="erro-idade"></span>
-        </fieldset>
+      </fieldset>
 
-        <fieldset>
+      <fieldset>
         <legend>Dados de Contato</legend>
         <label for="E-mail">E-mail</label>
         <input type="email" name="" class="input" id="email">
         <span class="erro-mensagem" id="erro-email"></span>
 
-        <label for="Número de Telefone">Número de Telefone</label>
-        <input type="tel" name="" inputmode="numeric" minlength="11" maxlength="11" class="input" id="telefone">
-        <span class="erro-mensagem" id="erro-telefone"></span>
+        <label for="Numero de Celular">Numero de Celular</label>
+        <input type="tel" name="" inputmode="numeric" minlength="11" maxlength="20" class="input" id="celular">
+        <span class="erro-mensagem" id="erro-celular"></span>
       </fieldset>
+      
       <fieldset>
-        <legend>Dados de Endereço</legend>
+        <legend>Dados de Endereco</legend>
 
-        <label for="Rua">Rua</label>
-        <input type="text" name="" class="input" id="rua">
-        <span class="erro-mensagem" id="erro-rua"></span>
+        <label for="Endereco">Endereço</label>
+        <input type="text" name="" class="input" id="endereco">
+        <span class="erro-mensagem" id="erro-endereco"></span>
         
         <label for="Cidade">Cidade</label>
         <input type="text" name="" class="input" id="cidade">
         <span class="erro-mensagem" id="erro-cidade"></span>
-
       </fieldset>
+      
       <div class="area-botao">
-        <button type="button" onclick="verificar()">Enviar Formulário</button>
-        <button type="button" onclick="limparInput()">Limpar Formulário</button>
+        <button type="button" id="btnEnviar">Enviar Formulario</button>
+        <button type="button" id="btnLimpar">Limpar Formulario</button>
       </div>
     </form>
   </div>
+  
+  <h2>Contatos Salvos</h2>
   <div class="div-icon">
-    <div>
+    <div id="lista-contatos" class="contatos-lista">
+      <div class="loading-mensagem">Carregando contatos...</div>
     </div>
   </div>
 </body>
+</html>

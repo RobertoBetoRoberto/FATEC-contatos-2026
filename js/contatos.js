@@ -15,10 +15,10 @@ export async function postContato(contato){
         body: JSON.stringify(contato)
     }
 
-        const response = await fetch(URL, options)
-        if (!response.ok) throw new Error("Erro ao criar um contato")
-            
-        return response.json() 
+    const response = await fetch(URL, options)
+    if (!response.ok) throw new Error("Erro ao criar um contato")
+        
+    return response.json() 
 }
 
 export async function putContato(id, contato) {
@@ -47,18 +47,3 @@ export async function deleteContato(id){
 
     return true
 }
-
-const novoContato = {
-  "nome": "Aqui é o Patrick",
-  "celular": "1",
-  "foto": "https://i.ytimg.com/vi/7GYegWy_Prk/maxresdefault.jpg",
-  "email": "SiriCascudo@email.com",
-  "endereco": "Rua do Siri Cascudo,  Nº 1",
-  "cidade": "Fenda do Bikini"
-}
-
-// postContato(novoContato)
-
-// putContato(26, novoContato)
-
-// deleteContato(26)

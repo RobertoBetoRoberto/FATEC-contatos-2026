@@ -1,23 +1,16 @@
 'use strict'
 
-function limparInput() {
+export function limparInput() {
     const inputs = document.querySelectorAll('.input')
     inputs.forEach(input => {
         input.value = ""
     })
-    const todosCampos = document.querySelectorAll('.input, select')
+    const todosCampos = document.querySelectorAll('.input')
     todosCampos.forEach(campo => {
         campo.classList.remove('input-invalido')
     })
-    const todasMensagens = document.querySelectorAll('.erro-mensagem')
-    todasMensagens.forEach(mensagem => {
-        mensagem.textContent = ""
-    })
-}
-
-function limparMensagensErro() {
-    const mensagens = ['nome', 'idade', 'email', 'telefone', 'rua', 'cidade']
-    mensagens.forEach(campo => {
+    const campos = ['nome', 'idade', 'email', 'celular', 'endereco', 'cidade']
+    campos.forEach(campo => {
         const spanErro = document.getElementById(`erro-${campo}`)
         if (spanErro) {
             spanErro.textContent = ""
@@ -25,27 +18,33 @@ function limparMensagensErro() {
     })
 }
 
-function verificar() {
-    const todosCampos = document.querySelectorAll('.input, select')
+export function verificar() {
+    const todosCampos = document.querySelectorAll('.input')
     todosCampos.forEach(campo => {
         campo.classList.remove('input-invalido')
     })
     
-    limparMensagensErro()
+    const campos = ['nome', 'idade', 'email', 'celular', 'endereco', 'cidade']
+    campos.forEach(campo => {
+        const spanErro = document.getElementById(`erro-${campo}`)
+        if (spanErro) {
+            spanErro.textContent = ""
+        }
+    })
     
-    const campos = [
+    const camposValidacao = [
         { id: 'nome', nome: 'Nome Completo' },
         { id: 'idade', nome: 'Idade' },
         { id: 'email', nome: 'E-mail' },
-        { id: 'telefone', nome: 'Número de Telefone' },
-        { id: 'rua', nome: 'Rua' },
+        { id: 'celular', nome: 'Número de Celular' },
+        { id: 'endereco', nome: 'Endereco' },
         { id: 'cidade', nome: 'Cidade' }
     ]
     
     let primeiroCampoInvalido = null
     let temErro = false
     
-    for (let campo of campos) {
+    for (let campo of camposValidacao) {
         const campoElement = document.getElementById(campo.id)
         if (!campoElement) continue;
         
@@ -64,26 +63,29 @@ function verificar() {
             }
         }
     }
+    
     if (temErro) {
         if (primeiroCampoInvalido) {
             primeiroCampoInvalido.focus()
         }
         return false
     }
-    alert("Formulário enviado com sucesso!")
+    
     return true
 }
 
-const camposValidacao = ['nome', 'idade', 'email', 'telefone', 'rua', 'cidade']
-camposValidacao.forEach(campo => {
-    const elemento = document.getElementById(campo)
-    if (elemento) {
-        elemento.addEventListener('input', function() {
-            this.classList.remove('input-invalido')
-            const spanErro = document.getElementById(`erro-${campo}`)
-            if (spanErro) {
-                spanErro.textContent = ""
-            }
-        })
-    }
-})
+export function iniciarListenersValidacao() {
+    const campos = ['nome', 'idade', 'email', 'celular', 'endereco', 'cidade']
+    campos.forEach(campo => {
+        const elemento = document.getElementById(campo)
+        if (elemento) {
+            elemento.addEventListener('input', function() {
+                this.classList.remove('input-invalido')
+                const spanErro = document.getElementById(`erro-${campo}`)
+                if (spanErro) {
+                    spanErro.textContent = ""
+                }
+            })
+        }
+    })
+}

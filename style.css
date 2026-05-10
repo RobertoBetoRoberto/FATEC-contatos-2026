@@ -79,3 +79,110 @@ h1{
     padding: 5px 5px 5px 5px;
     min-width: 1300px;  /* !!!Remover!!! Apenas para testes visuais */
 }
+
+.contatos-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    padding: 10px;
+    width: 100%;
+    min-height: 200px;
+}
+.contato-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.2s;
+    animation: fadeIn 0.3s ease-in;
+}
+.contato-foto-container {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.contato-foto {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
+    border: 2px solid #22a289;
+}
+.contato-nome {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+.contato-info {
+    margin: 6px 0;
+    padding: 2px 0;
+    font-size: 0.85em;
+}
+.contato-info strong {
+    color: #22a289;
+    display: inline-block;
+    min-width: 65px;
+    font-size: 0.9em;
+}
+.contato-info span {
+    color: #555;
+    word-break: break-word;
+}
+.loading-mensagem, .sem-contatos, .erro-mensagem-global {
+    text-align: center;
+    padding: 30px;
+    color: #fff;
+    font-size: 1em;
+    background: rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+.erro-mensagem-global {
+    background: rgba(255,0,0,0.3);
+    color: #ffcccc;
+}
+
+@media (max-width: 768px) {
+    .div-icon {
+        min-width: auto !important;
+        width: 95%;
+    }
+    .contatos-lista {
+        grid-template-columns: 1fr;
+    }
+    .contato-info strong {
+        min-width: 60px;
+    }
+}
+
+/* Botão excluir */
+.contato-botao-excluir {
+    margin-top: 12px;
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.btn-excluir {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-excluir:hover {
+    background-color: #c82333;
+}
+
+.btn-excluir:active {
+    transform: scale(0.98);
+}
