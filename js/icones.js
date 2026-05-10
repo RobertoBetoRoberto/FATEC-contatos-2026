@@ -21,11 +21,6 @@ function criarCardContato(contato) {
     card.className = 'contato-card'
     card.setAttribute('data-id', contato.id)
     
-    let fotoUrl = contato.foto
-    if (!fotoUrl || fotoUrl === '' || fotoUrl === 'https://via.placeholder.com/150') {
-        fotoUrl = ''
-    }
-    
     const divFoto = document.createElement('div')
     divFoto.className = 'contato-foto-container'
     
@@ -33,30 +28,13 @@ function criarCardContato(contato) {
     img.className = 'contato-foto'
     img.alt = contato.nome || 'Sem nome'
     
-    if (fotoUrl && fotoUrl !== '') {
-        img.src = fotoUrl
+    if (contato.foto && contato.foto !== '' && contato.foto !== null) {
+        img.src = contato.foto
         img.onerror = function() {
-            this.src = ''
-            this.style.backgroundColor = '#22a289'
-            this.style.display = 'flex'
-            this.style.alignItems = 'center'
-            this.style.justifyContent = 'center'
-            this.style.color = 'white'
-            this.style.fontSize = '30px'
-            this.style.fontWeight = 'bold'
-            const primeiraLetra = (contato.nome || '?').charAt(0).toUpperCase()
-            this.alt = primeiraLetra
+            this.src = './img/icone-template.png'
         }
     } else {
-        img.style.backgroundColor = '#22a289'
-        img.style.display = 'flex'
-        img.style.alignItems = 'center'
-        img.style.justifyContent = 'center'
-        img.style.color = 'white'
-        img.style.fontSize = '30px'
-        img.style.fontWeight = 'bold'
-        const primeiraLetra = (contato.nome || '?').charAt(0).toUpperCase()
-        img.alt = primeiraLetra
+        img.src = './img/icone-template.png'
     }
     
     divFoto.appendChild(img)
