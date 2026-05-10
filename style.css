@@ -24,7 +24,7 @@ h1{
     flex-direction: column;
     align-items: center;
     border: solid 2px;
-    padding: 30px 40px 0 40px;
+    padding: 5px 15px 0 15px;
 }
 .div-form input, label{
     font-size: 1.5em;
@@ -185,4 +185,49 @@ h1{
 
 .btn-excluir:active {
     transform: scale(0.98);
+}
+
+/* Preview de imagem e botão de upload */
+.preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.preview-input {
+    display: none;
+}
+
+.preview-label {
+    width: 120px;
+    height: 120px;
+    border: 3px solid #22a289;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+}
+
+.preview-label:hover {
+    border-color: #35f9d2;
+}
+
+.preview-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+
+    pointer-events: none;
+}
+
+/* Ajuste para o fieldset da foto */
+fieldset:last-of-type {
+    min-width: 200px;
 }

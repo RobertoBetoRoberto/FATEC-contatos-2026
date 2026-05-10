@@ -5,11 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cadastro Acessivel</title>
   <link rel="stylesheet" href="./style.css">
-  <script type="module" src="./app.js" defer></script></head>
+  <script type="module" src="./app.js"></script>
+</head>
 <body>
   <h1>Cadastro</h1>
   <div class="div-form">
     <form action="">
+
+      <fieldset>
+        <legend>Foto do Perfil</legend>
+        <div class="preview-container">
+          <input id="preview-input" class="preview-input" type="file" accept="image/*">
+          <label class="preview-label" for="preview-input"></label>
+          <img id="preview-image" class="preview-image" src="./img/upload-icon.svg" alt="Preview da foto">
+        </div>
+      </fieldset>
       <fieldset>
         <legend>Dados de Identificacao</legend>
 
